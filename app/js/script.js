@@ -1,10 +1,10 @@
-let sliderElement = document.querySelector("#slider");
-let buttonElement = document.querySelector('#button');
+let sliderElement = document.getElementById("slider");
+let buttonElement = document.getElementById('gerarSenha');
 
-let sizePassword = document.querySelector('#valor');
-let password = document.querySelector('#password');
+let sizePassword = document.getElementById('valor');
+let password = document.getElementById('password');
 
-let containerPassword = document.querySelector('#container-password');
+let containerPassword = document.getElementById('container-password');
 
 let charsert = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890!@";
 let newPass = "";
@@ -13,6 +13,14 @@ sizePassword.innerHTML = sliderElement.value;
 slider.oninput = function () {
     sizePassword.innerHTML = this.value;
 }
+
+buttonElement.addEventListener('click', () => {
+    generatePassword();
+})
+
+password.addEventListener('click', () => {
+    copyPassowrd();
+})
 
 function generatePassword() {
     let pass = "";
